@@ -1,0 +1,90 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/update_doc">
+  <table width="455" border="1">
+
+    <tr>
+      <th width="220" scope="row"><p>Department</p>      </th>
+      <td width="219"><label>
+        <select name="select">
+          <option value="ENT"{% if val[5] == 'ENT' %}selected{% endif %}>ENT</option>
+          <option value="Skin"{% if val[5] == 'Skin' %}selected{% endif %}>Skin</option>
+          <option value="Ortho"{% if val[5] == 'Ortho' %}selected{% endif %}>ortho</option>
+          <option value="nephrology"{% if val[5] == 'nephrology' %}selected{% endif %}>nephrology</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">First name </th>
+      <td><label>
+        <input type="text" name="textfield" value="{{val[3]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Last name </th>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val[4]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male"  {% if val[6] == "male"%}checked{% endif %} />
+        male
+        <input name="radiobutton" type="radio" value="female" {% if val[6] == "female"%}checked{% endif %} />
+        Female</label></td>
+    </tr>
+    <tr>
+      <th scope="row">Qualification</th>
+      <td><label>
+        <input type="checkbox" name="checkbox" value="mbbs" {% if 'mbbs' in val[7]%}checked{% endif %} />
+        mbbs
+        <input type="checkbox" name="checkbox" value="md" {% if 'md' in val[7]%}checked{% endif %} />
+        md </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><label>
+        <input type="date" name="textfield3" value="{{val[8]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Experience</th>
+      <td><label>
+        <input type="text" name="textfield4" value="{{val[9]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" name="textfield42" value="{{val[10]}}" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><input type="text" name="textfield43" value="{{val[11]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><input type="text" name="textfield44" value="{{val[12]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">e-mail</th>
+      <td><input type="text" name="textfield45" value="{{val[13]}}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">Contact</th>
+      <td><input type="text" name="textfield46" value="{{val[14]}}"/></td>
+    </tr>
+    <!--<tr>-->
+      <!--<th scope="row">Password</th>-->
+      <!--<td><label>-->
+        <!--<input type="text" name="textfield6" />-->
+      <!--</label></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <th colspan="2" scope="row"><label>
+        <input name="Submit" type="submit" value="Update" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

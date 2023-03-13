@@ -1,0 +1,41 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<form action="/add_doctor">
+<table width="734" height="394" border="1"id="customers">
+  <tr>
+    <th width="85" scope="col">DOCTOR NAME </th>
+    <th width="85" scope="col">DEPARTMENT</th>
+    <th width="85" scope="col">GENDER</th>
+    <th width="85" scope="col">QUALIFICATION</th>
+    <th width="85" scope="col">DOB</th>
+    <th width="85" scope="col">EXPERIANCE</th>
+    <th width="85" scope="col">ADDRESS</th>
+    <th width="87" scope="col">&nbsp;</th>
+  </tr>
+  {% for i in val %}
+  <tr>
+    <td>&nbsp;{{i[3]}} {{i[4]}}</td>
+    <td>&nbsp;{{i[5]}}</td>
+    <td>&nbsp;{{i[6]}}</td>
+    <td>&nbsp;{{i[7]}}</td>
+    <td>&nbsp;{{i[8]}}</td>
+    <td> {{i[9]}}</td>
+    <td> {{i[10]}}</td>
+    <td><p><a href="/edit_doc?id={{i[0]}}">edit</a></p>
+      <p><a href="/delete_doc?id={{i[1]}}">delete</a></p></td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td height="49" colspan="8"><p><a href="url"></a>
+      <label>
+      <input type="submit" name="Submit" value="Add new" />
+      </label>
+    </p>
+      <p align="center">&nbsp; </p>
+      <p align="center">&nbsp; </p></td>
+    </tr>
+</table>
+
+</form>
+{% endblock %}

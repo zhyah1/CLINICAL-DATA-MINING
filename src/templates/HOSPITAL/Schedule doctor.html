@@ -1,0 +1,35 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="doc_schedule">
+  <table width="334" border="1" id="customers">
+    <tr>
+      <th width="155" scope="row">Doctor</th>
+      <td width="163"><label>
+        <select name="select">
+          {% for i in val %}
+          <option value="{{i[1]}}">{{i[3]}} {{i[4]}}</option>
+          {% endfor %}
+
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><input name="textfield462" type="date" value="" min="1990-01-01" max="2019-12-31" required  /></td>
+    </tr>
+    <tr>
+      <th scope="row">From time </th>
+      <td><input type="time" name="textfield46" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">To time</th>
+      <td><input type="time" name="textfield463" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Schedule" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}

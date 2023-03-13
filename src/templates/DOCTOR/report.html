@@ -1,0 +1,26 @@
+{% extends 'doctorindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/upload">
+  <table width="900" border="1"id="customers">
+    <tr>
+      <th scope="col">Doctor Name </th>
+      <th scope="col">Date</th>
+      <th scope="col">Report</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td> {{i[0]}} {{i[1]}}</td>
+      <td>&nbsp;{{i[2]}}</td>
+      <td>&nbsp;{{i[3]}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="3"><label>
+        <div align="center">
+           <input type="submit" name="ADD NEW" value="ADD NEW"  />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

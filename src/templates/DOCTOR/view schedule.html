@@ -1,0 +1,21 @@
+{% extends 'doctorindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="900" border="1"id="customers">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">From Time </th>
+      <th scope="col">To Time </th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td> {{i[2]}}</td>
+      <td> {{i[3]}}</td>
+      <td>&nbsp;{{i[4]}}</td>
+      <td><a href="/">view more info </a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}

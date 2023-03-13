@@ -1,0 +1,37 @@
+{% extends 'doctorindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/edit_drug">
+  <table width="900" border="1"id="customers">
+    <tr>
+      <th scope="col">Drug name </th>
+      <th scope="col"><label>
+        <div align="left">
+          <input type="text" name="textfield" value="{{val[2]}}" required pattern="[A-Z a-z.]{3,25}"/>
+          </div>
+      </label></th>
+    </tr>
+    <tr>
+      <td><div align="center">Exp Date </div></td>
+      <td>
+        <div align="left">
+          <input type="text" name="textfield2" value="{{val[3]}}" min="1990-01-01" max="2019-12-31" required />
+        </div></td>
+    </tr>
+    <tr>
+      <td><div align="center">Manufac date </div></td>
+      <td><input type="text" name="textfield3"  value="{{val[4]}}" min="1990-01-01" max="2019-12-31" required /></td>
+    </tr>
+    <tr>
+      <td><div align="center">Description </div></td>
+      <td><input type="text" name="textfield4"  value="{{val[5]}}" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="Edit" />
+      </div></td>
+    </tr>
+  </table>
+  <label></label>
+  <div align="center"></div>
+</form>
+{% endblock %}
